@@ -7,19 +7,19 @@ def canUnlockAll(boxes):
     if (len(boxes[0]) == 0):
         return False
     keys = set()
-    keys.update(boxes[0])
+    keys.add(0)
     alreadySee = set()
-
     i = 0
     while i < len(boxes):
-        for num in boxes[i]:
-            if i in keys and i not in alreadySee:
+        lenof = len(keys)
+        if i not in alreadySee and i in keys:
+            for num in boxes[i]:
                 keys.add(num)
-                alreadySee.add(i)
+            alreadySee.add(i)
+            if lenof < len(keys):
                 i = 0
-                break
         i += 1
 
-    if (len(keys) == len(boxes) or len(keys) == (len(boxes) - 1)):
+    if (len(alreadySee) == len(boxes)):
         return True
     return False
