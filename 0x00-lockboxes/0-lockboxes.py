@@ -17,7 +17,7 @@ def canUnlockAll(boxes):
             for num in boxes[i]:
                 if num > 0 and num < len(boxes):
                     keys.add(num)
-            alreadySee.add(i);
+            alreadySee.add(i)
         i += 1
     print(keys, alreadySee, len(boxes))
     if (len(keys) == len(boxes) or len(keys) == (len(boxes) - 1)):
