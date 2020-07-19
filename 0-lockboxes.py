@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 
-def canUnlockAll(boxes=[]):
-    if (len(boxes) == 0):
+def canUnlockAll(boxes):
+    if (type(boxes) is not list or len(boxes) == 0):
         return False
     if (len(boxes[0]) == 0):
         return False
