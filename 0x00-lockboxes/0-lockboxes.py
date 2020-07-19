@@ -8,14 +8,18 @@ def canUnlockAll(boxes):
         return False
     keys = set()
     keys.add(0)
+    alreadySee = set()
 
+    print(boxes)
     i = 0
     while i < len(boxes):
-        for num in boxes[i]:
-            if i in keys and num < len(boxes) and num > 0:
-                keys.add(num)
+        if i in keys and i not in alreadySee:
+            for num in boxes[i]:
+                if num > 0 and num < len(boxes):
+                    keys.add(num)
+            alreadySee.add(i);
         i += 1
-
+    print(keys, alreadySee, len(boxes))
     if (len(keys) == len(boxes) or len(keys) == (len(boxes) - 1)):
         return True
     return False
