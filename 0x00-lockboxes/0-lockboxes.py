@@ -10,7 +10,6 @@ def canUnlockAll(boxes):
     keys.add(0)
     alreadySee = set()
 
-    print(boxes)
     i = 0
     while i < len(boxes):
         if i in keys and i not in alreadySee:
@@ -19,7 +18,6 @@ def canUnlockAll(boxes):
                     keys.add(num)
             alreadySee.add(i)
         i += 1
-    print(keys, alreadySee, len(boxes))
     if (len(keys) == len(boxes) or len(keys) == (len(boxes) - 1)):
         return True
     return False
