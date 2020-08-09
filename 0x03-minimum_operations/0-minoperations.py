@@ -5,7 +5,7 @@ Min operations
 
 
 def minOperations(n=0):
-    """ comment """
+    """ give n to calculate op """
     if (n < 2):
         return 0
     copy = 1
