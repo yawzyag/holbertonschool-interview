@@ -99,7 +99,7 @@ void processMatris(int grid1[3][3], int gridcp[3][3])
  */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
-	int i, j;
+	int i, j, num, t = 0;
 	int gridcp[3][3];
 
 	for (i = 0; i < 3; i++)
@@ -107,10 +107,17 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 		for (j = 0; j < 3; j++)
 		{
 			grid1[i][j] = grid1[i][j] +  grid2[i][j];
+			num = grid1[i][j];
+			if (num >= 4)
+				t = 1;
+
 		}
 	}
-	printf("=\n");
-	print_grid(grid1);
-	matriscopy(gridcp, grid1);
-	processMatris(grid1, gridcp);
+	if (t)
+	{
+		printf("=\n");
+		print_grid(grid1);
+		matriscopy(gridcp, grid1);
+		processMatris(grid1, gridcp);
+	}
 }
