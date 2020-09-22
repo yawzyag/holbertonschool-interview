@@ -4,29 +4,22 @@ Validate utf8
 """
 
 
-def getLen(num):
-    if (num >> 7 == 0):
-        return 1
-    if (num >> 5 == 0b110):
-        return 2
-    if (num >> 4 == 0b1110):
-        return 3
-    if (num >> 3 == 0b11110):
-        return 4
-    return -1
-
-
 def validUTF8(data):
-    i = 0
-    for num in data:
-        n = getLen(num)
-        if (n == -1 or i + n > len(data)):
-            return False
-        i += 1
-        while (n > 1):
-            i += 1
-            n -= 1
-            if (data[i] >> 6 != 0b10):
+    left = 0
+    for d in data:
+        if (left == 0):
+            if ((d >> 3) == 0b11110):
+                left = 3
+            elif ((d >> 4) == 0b1110):
+                left = 2
+            elif ((d >> 5) == 0b110):
+                left = 1
+            elif ((d >> 7) == 0b0):
+                left = 0
+            else:
                 return False
-
-    return True
+        else:
+            if ((d >> 6) != 0b10):
+                return False
+            left -= 1
+    return left == 0
