@@ -35,10 +35,10 @@ void printBox(int level)
 {
 	int i, j, status = -1, y, z;
 
-	for (i = 0; i < (_pow(3, level)); i++)
+	for (i = 0; i < (pow(3, level)); i++)
 	{
 		/* code */
-		for (j = 0; j < (_pow(3, level)); j++)
+		for (j = 0; j < (pow(3, level)); j++)
 		{
 			/* code */
 			status = -1;
