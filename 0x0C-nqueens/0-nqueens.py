@@ -7,6 +7,14 @@ from sys import argv, exit
 
 
 def ln(x):
+    """[logaritm implementation]
+
+    Args:
+        x ([int]): [number to find logaritm]
+
+    Returns:
+        [int]: [lograit value]
+    """
     n = 1000.0
     return n * ((x ** (1/n)) - 1)
 
@@ -56,6 +64,11 @@ def solveBoard(list_items, row, rowmask,
 
 
 def main(argv):
+    """[main call]
+
+    Args:
+        argv ([string]): [comand line values]
+    """
     if (len(argv) != 2):
         print("Usage: nqueens N")
         exit(1)
