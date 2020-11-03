@@ -14,7 +14,7 @@ avl_t *sortedArrayToBST(avl_t **tree, int *array, int start, int end)
 	int mid;
 	avl_t *root = NULL;
 
-	if (start >= end)
+	if (start > end)
 		return (NULL);
 	mid = (start + end) / 2;
 	root = bst_insert(tree, array[mid]);
