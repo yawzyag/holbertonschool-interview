@@ -21,7 +21,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		/*
 		* if (val->express)
 		*	printf("\n%lu, %lu\n",
-				val->express->index, list->express->index);
+				val->express->index, temp->express->index);
 		*/
 		if (val->n >= value || !val->express)
 		{
