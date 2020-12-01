@@ -11,7 +11,7 @@ void heap_sort(int *array, size_t size)
 	unsigned int n = size, i = n / 2, parent, child;
 	int t;
 
-	for (;;)
+	while (1)
 	{
 		if (i > 0)
 		{
